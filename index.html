@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrollable Website</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: sans-serif;
+        background: linear-gradient(
+          180deg,
+          #171140 50%,
+          #2c5b5c 80%,
+          #106275 100%
+        );
+      }
+
+      header {
+        color: white;
+        font-size: 36px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      header img {
+        width: 100%;
+      }
+
+      .header-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+
+      h1 {
+        font-weight: 100;
+        padding: 0 20px;
+        font-size: 2rem;
+        letter-spacing: 0.3em;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      .box {
+        height: 200px;
+        margin: 10px;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 12px;
+        width: 300px;
+        color: white;
+        background: linear-gradient(
+          180deg,
+          #2e9ca6 0%,
+          #1f7382 30.73%,
+          #428c76 100%
+        );
+        border-radius: 11px;
+        padding: 20px 35px;
+        line-height: 2;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .box-content {
+        font-size: 10px;
+        text-align: left;
+      }
+
+      .box-content img {
+        width: 50px;
+      }
+
+      .temp {
+        position: relative;
+      }
+
+      .temp::before {
+        position: absolute;
+        top: 7px;
+        left: -20px;
+        content: "";
+        display: block;
+        width: 15px;
+        height: 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .container2 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-bottom: 100px;
+      }
+
+      .box2 {
+        background-color: #ccc;
+        height: 400px;
+        margin: 10px;
+        flex-shrink: 0;
+        text-align: center;
+        line-height: 400px;
+        font-size: 72px;
+        width: 500px;
+
+        background: linear-gradient(
+          180deg,
+          #fdca2d 0%,
+          #fdca2d 54.17%,
+          #ff9a41 100%
+        );
+        border-radius: 12px;
+
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .box:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background-color: white;
+        color: white;
+        position: fixed;
+        padding: 20px;
+        box-sizing: border-box;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #fff;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+
+        background: linear-gradient(180deg, #15e3c3 0%, #23d8c4 100%);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 24px;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .btn2 {
+        background: linear-gradient(180deg, #ecc540 0%, #f9b70a 100%);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 24px;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/header.png" />
+      <div class="header-content">
+        <h1>TEMPERATE</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="box" style="width: 150px">
+        <div class="box-content">
+          <img src="./assets/cloud.svg" />
+          <div>Dust Storm</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+        </div>
+      </div>
+      <div class="box" style="width: 130px">
+        <div class="box-content">
+          <img src="./assets/cloud.svg" />
+          <div>Dust Storm</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+        </div>
+      </div>
+      <div class="box" style="width: 130px">
+        <div class="box-content">
+          <img src="./assets/cloud.svg" />
+          <div>Dust Storm</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+        </div>
+      </div>
+      <div class="box" style="width: 250px">
+        <div class="box-content">
+          <img src="./assets/cloud.svg" />
+          <div>Dust Storm</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+          <div class="temp">35deg</div>
+        </div>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="box2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 161 182"
+          fill="none"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_622"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="161"
+            height="182"
+          >
+            <rect
+              width="161"
+              height="182"
+              rx="12"
+              fill="url(#paint0_linear_1_622)"
+            />
+          </mask>
+          <g mask="url(#mask0_1_622)">
+            <path
+              d="M24 103L-7 141V194H171V82L151 116L139 96L119 132L110 116L96 132L77 82L55 121L44 103L33 121L24 103Z"
+              fill="#FF993F"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_622"
+              x1="80.5"
+              y1="0"
+              x2="80.5"
+              y2="182"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FDCA2D" />
+              <stop offset="0.541667" stop-color="#FDCA2D" />
+              <stop offset="1" stop-color="#FF9A41" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="box2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 161 182"
+          fill="none"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_622"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="161"
+            height="182"
+          >
+            <rect
+              width="161"
+              height="182"
+              rx="12"
+              fill="url(#paint0_linear_1_622)"
+            />
+          </mask>
+          <g mask="url(#mask0_1_622)">
+            <path
+              d="M24 103L-7 141V194H171V82L151 116L139 96L119 132L110 116L96 132L77 82L55 121L44 103L33 121L24 103Z"
+              fill="#FF993F"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_622"
+              x1="80.5"
+              y1="0"
+              x2="80.5"
+              y2="182"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FDCA2D" />
+              <stop offset="0.541667" stop-color="#FDCA2D" />
+              <stop offset="1" stop-color="#FF9A41" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="box2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 161 182"
+          fill="none"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_622"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="161"
+            height="182"
+          >
+            <rect
+              width="161"
+              height="182"
+              rx="12"
+              fill="url(#paint0_linear_1_622)"
+            />
+          </mask>
+          <g mask="url(#mask0_1_622)">
+            <path
+              d="M24 103L-7 141V194H171V82L151 116L139 96L119 132L110 116L96 132L77 82L55 121L44 103L33 121L24 103Z"
+              fill="#FF993F"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_622"
+              x1="80.5"
+              y1="0"
+              x2="80.5"
+              y2="182"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FDCA2D" />
+              <stop offset="0.541667" stop-color="#FDCA2D" />
+              <stop offset="1" stop-color="#FF9A41" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="box2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 161 182"
+          fill="none"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_622"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="161"
+            height="182"
+          >
+            <rect
+              width="161"
+              height="182"
+              rx="12"
+              fill="url(#paint0_linear_1_622)"
+            />
+          </mask>
+          <g mask="url(#mask0_1_622)">
+            <path
+              d="M24 103L-7 141V194H171V82L151 116L139 96L119 132L110 116L96 132L77 82L55 121L44 103L33 121L24 103Z"
+              fill="#FF993F"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_622"
+              x1="80.5"
+              y1="0"
+              x2="80.5"
+              y2="182"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FDCA2D" />
+              <stop offset="0.541667" stop-color="#FDCA2D" />
+              <stop offset="1" stop-color="#FF9A41" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="box2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 161 182"
+          fill="none"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_622"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="161"
+            height="182"
+          >
+            <rect
+              width="161"
+              height="182"
+              rx="12"
+              fill="url(#paint0_linear_1_622)"
+            />
+          </mask>
+          <g mask="url(#mask0_1_622)">
+            <path
+              d="M24 103L-7 141V194H171V82L151 116L139 96L119 132L110 116L96 132L77 82L55 121L44 103L33 121L24 103Z"
+              fill="#FF993F"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_622"
+              x1="80.5"
+              y1="0"
+              x2="80.5"
+              y2="182"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FDCA2D" />
+              <stop offset="0.541667" stop-color="#FDCA2D" />
+              <stop offset="1" stop-color="#FF9A41" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <footer>
+      <button class="btn">Button 1</button>
+      <button class="btn btn2">Button 2</button>
+    </footer>
+  </body>
+</html>
